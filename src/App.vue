@@ -8,7 +8,7 @@
         <SearchInput v-model="searchedPhrase"/>
       </template>
     </TopNav>
-    <ShowsList :shows="shows" />
+    <ShowsList :shows="displayedShows" />
   </div>
 </template>
 ------------------------------------------------------
@@ -74,7 +74,12 @@ export default {
     }
   },
   // methods: {},
-  // computed: {},
+  computed: {
+    displayedShows() {
+      if (!this.searchedPhrase) return this.shows
+      return this.shows.filter(x => x.name.toUpperCase().includes(this.searchedPhrase.toUpperCase()))
+    },
+  },
   // watch: {},
 
   // data() {},

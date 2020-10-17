@@ -1,7 +1,7 @@
 <template>
   <div class="search-input">
     <form role="search">
-      <input type="text" id="header-search" @input="$emit('input', $event.target.value)"/>
+      <input type="text" id="header-search" @input="$emit('input', $event.target.value)" placeholder="Search...."/>
       <label for="header-search" class="visually-hidden">Search</label>
     </form>
   </div>
