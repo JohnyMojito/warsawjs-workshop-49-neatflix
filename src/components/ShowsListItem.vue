@@ -1,26 +1,29 @@
 <template>
-  <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}">
-    <div class="info-wrapper">
-      <h2 class="title">{{show.name}}</h2>
-      <div class="year-rating-wrapper">
-        <div class="year">{{show.premiered}}</div>
-        <div class="rating">{{show.rating}}</div>
+    <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}" @click="isSummaryShown = !isSummaryShown">
+      <div class="info-wrapper">
+        <h2 class="title">{{show.name}}</h2>
+        <div class="year-rating-wrapper">
+          <div class="year">{{show.premiered}}</div>
+          <div class="rating">{{show.rating}}</div>
+        </div>
       </div>
+      <div class="summary" v-if="isSummaryShown">{{show.summary}}</div>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
   name: 'ShowsListItem',
-  data() {
+    data() {
     return {
       show: {
         name: 'True Detective', // tutaj tytuł filmu
         premiered: 2014, // rok premiery
         rating: 10, // ocena, 0 - 10
         imgURL: 'http://static.tvmaze.com/uploads/images/medium_portrait/178/445621.jpg',
+        summary: 'Tak, to jest po prostu świetny serial, no. Bardzo polecam',
       },
+      isSummaryShown: false,
     }
   }
 }
@@ -54,4 +57,11 @@ export default {
   }
 }
 
+.summary {
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+}
 </style>
