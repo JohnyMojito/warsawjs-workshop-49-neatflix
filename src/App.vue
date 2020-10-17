@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <ShowsListItem />
+    <div class="shows-list">
+      <ShowsListItem :show="show" :isSummaryShown="isSummaryShown"/>
+    </div>
   </div>
 </template>
 ------------------------------------------------------
@@ -12,6 +14,18 @@ export default {
   components: {
     ShowsListItem
   },
+  data() {
+    return {
+      show: {
+        name: 'True Detective', // tutaj tytuł filmu
+        premiered: 2014, // rok premiery
+        rating: 10, // ocena, 0 - 10
+        imgURL: 'http://static.tvmaze.com/uploads/images/medium_portrait/178/445621.jpg',
+        summary: 'Tak, to jest po prostu świetny serial, no. Bardzo polecam',
+      },
+      isSummaryShown: false
+    }
+  }
   // methods: {},
   // computed: {},
   // watch: {},
@@ -22,7 +36,7 @@ export default {
 }
 </script>
 ------------------------------------------------------
-<style>
+<style lang="scss">
 html,
 body {
   margin: 0;
@@ -36,5 +50,8 @@ body {
   color: #2c3e50;
   height: 100vh;
   width: 100vw;
+  .shows-list {
+    padding: 15px;
+  }
 }
 </style>
