@@ -1,5 +1,5 @@
 <template>
-  <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}" @click="isSummaryShown = !isSummaryShown">
+  <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}">
     <div class="info-wrapper">
       <h2 class="title">{{show.name}}</h2>
       <div class="year-rating-wrapper">
