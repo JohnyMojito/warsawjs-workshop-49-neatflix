@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <ShowsList :shows="shows"/>
+    <SearchInput v-model="searchedPhrase"/>
+    <ShowsList :shows="shows" />
   </div>
 </template>
 ------------------------------------------------------
 <script>
 import ShowsList from '@/components/ShowsList'
+import SearchInput from '@/components/SearchInput'
 
 export default {
   name: 'App',
   components: {
+    SearchInput,
     ShowsList
   },
   data() {
     return {
+      searchedPhrase: '',
       shows: [
         {
           name: 'True Detective',
@@ -85,5 +89,6 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
 }
 </style>
