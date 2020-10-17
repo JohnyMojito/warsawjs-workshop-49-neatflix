@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <SearchInput v-model="searchedPhrase"/>
+    <TopNav>
+      <template #left>
+        <h1>Neatflix</h1>
+      </template>
+      <template #right>
+        <SearchInput v-model="searchedPhrase"/>
+      </template>
+    </TopNav>
     <ShowsList :shows="shows" />
   </div>
 </template>
@@ -8,12 +15,14 @@
 <script>
 import ShowsList from '@/components/ShowsList'
 import SearchInput from '@/components/SearchInput'
+import TopNav from '@/components/TopNav.vue'
 
 export default {
   name: 'App',
   components: {
     SearchInput,
-    ShowsList
+    ShowsList,
+    TopNav
   },
   data() {
     return {
