@@ -1,6 +1,6 @@
 <template>
   <div class="shows-list">
-    <ShowsListItem :show="show" v-for="show in shows" :key="show.name"/>
+    <ShowsListItem :show="show" v-for="show in shows" :key="show.id"/>
   </div>
 </template>
 

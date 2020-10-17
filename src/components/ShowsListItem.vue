@@ -1,10 +1,10 @@
 <template>
-    <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}" @click="isSummaryShown = !isSummaryShown">
+    <div class="shows-list-item" :style="{backgroundImage: `url(${show.image.medium})`}" @click="isSummaryShown = !isSummaryShown">
       <div class="info-wrapper">
         <h2 class="title">{{show.name}}</h2>
         <div class="year-rating-wrapper">
           <div class="year">{{show.premiered}}</div>
-          <div class="rating">{{show.rating}}</div>
+          <div class="rating">{{show.rating.average}}</div>
         </div>
       </div>
       <div class="summary" v-if="isSummaryShown">{{show.summary}}</div>
@@ -19,7 +19,7 @@ export default {
     return {
       isSummaryShown: false
     }
-  }
+  },
 }
 </script>
 
