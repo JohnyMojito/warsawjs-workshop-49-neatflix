@@ -54,11 +54,4 @@ export default {
   }
 }
 
-.summary {
-  height: 100%;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  display: flex;
-  align-items: center;
-}
 </style>
