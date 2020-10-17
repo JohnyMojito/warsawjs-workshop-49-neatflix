@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="shows-list">
-      <ShowsListItem :show="show" :isSummaryShown="isSummaryShown"/>
+      <ShowsListItem :show="show"/>
     </div>
   </div>
 </template>
@@ -23,7 +23,6 @@ export default {
         imgURL: 'http://static.tvmaze.com/uploads/images/medium_portrait/178/445621.jpg',
         summary: 'Tak, to jest po prostu świetny serial, no. Bardzo polecam',
       },
-      isSummaryShown: false
     }
   }
   // methods: {},

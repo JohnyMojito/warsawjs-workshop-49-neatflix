@@ -14,7 +14,12 @@
 <script>
 export default {
   name: 'ShowsListItem',
-  props: ['show', 'isSummaryShown'],
+  props: ['show'],
+  data() {
+    return {
+      isSummaryShown: false
+    }
+  }
 }
 </script>
 
