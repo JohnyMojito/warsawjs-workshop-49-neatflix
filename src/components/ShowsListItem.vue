@@ -1,5 +1,5 @@
 <template>
-  <div class="shows-list-item" :style="{backgroundImage: `url(${show.imgURL})`}">
+  <div class="shows-list-item">
     <h2>{{show.name}}</h2>
     <p>premiered: {{show.premiered}}</p>
     <span>rating: {{show.rating}} / 10</span>
