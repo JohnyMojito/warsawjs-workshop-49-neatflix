@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Witajcie na workshopie"/>
+    <show-list-item></show-list-item>
   </div>
 </template>
 ------------------------------------------------------
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ShowListItem from './components/ShowsListItem.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'show-list-item': ShowListItem
   },
   // methods: {},
   // computed: {},
