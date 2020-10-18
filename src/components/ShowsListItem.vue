@@ -1,5 +1,6 @@
 <template>
-    <div class="shows-list-item" :style="{backgroundImage: `url(${show.image.medium})`}" @click="isSummaryShown = !isSummaryShown">
+  <router-link :to="'/details/'+this.show.id" class="no-underline">
+    <div class="shows-list-item" :style="{backgroundImage: `url(${show.image.medium})`}">
       <div class="info-wrapper">
         <h2 class="title">{{show.name}}</h2>
         <div class="year-rating-wrapper">
@@ -7,24 +8,23 @@
           <div class="rating">{{show.rating.average}}</div>
         </div>
       </div>
-      <div class="summary" v-if="isSummaryShown">{{show.summary}}</div>
     </div>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: 'ShowsListItem',
   props: ['show'],
-  data() {
-    return {
-      isSummaryShown: false
-    }
-  },
 }
 </script>
 
 <style scoped lang="scss">
+.no-underline {
+  text-decoration: none;
+}
 .shows-list-item {
+  text-decoration: none;
   text-align: center;
   display: flex;
   flex-direction: column-reverse;

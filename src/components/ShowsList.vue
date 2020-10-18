@@ -22,6 +22,5 @@ export default {
   display: flex;
   flex-wrap: wrap;
   background-color: #2c0606;
-  flex-grow:1;
 }
 </style>

@@ -1,19 +1,29 @@
 <template>
   <div class="top-nav">
-    <slot name="left" />
-    <slot name="right" />
+    <slot name="left">
+      <h1>Neatflix</h1>
+    </slot>
+    <slot name="right">
+      <SearchInput @input="$emit(input, $event.target.value)" :value="value"/>
+    </slot>
   </div>
 </template>
 
 <script>
+import SearchInput from '@/components/SearchInput'
+
 export default {
-  name: 'TopNav'
+  name: 'TopNav',
+  props: ['value'],
+  components: {
+    SearchInput
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .top-nav  {
-  width: 100%;
+  max-width: 100vw;
   height: 50px;
   background: #000;
   display: flex;
